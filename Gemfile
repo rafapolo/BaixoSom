@@ -13,6 +13,8 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'execjs'
+gem 'therubyracer'
 gem 'unicorn'
 
 # gem 'capistrano'
