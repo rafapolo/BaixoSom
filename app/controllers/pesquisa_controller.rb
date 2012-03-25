@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class PesquisaController < ApplicationController
 
   def pesquisa

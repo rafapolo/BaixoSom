@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class AlbunsController < ApplicationController
 
   def index

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class User < ActiveRecord::Base
   scope :confirmado, where(:confirmado=>true)
   scope :ultimos, where(:confirmado=>true).limit(10)

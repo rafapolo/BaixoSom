@@ -1,10 +1,12 @@
+# encoding: UTF-8
 class BandasController < ApplicationController
   # GET /bandas
   # GET /bandas.xml
   def index
     letra = params[:letra]
-    @bandas = letra ? Banda.find_by_letra(letra ) : []
-
+    @bandas = letra ? Banda.find_by_letra(letra) : []
+puts letra
+puts "#"*20
     @bandas_count = Banda.count
     @albuns_count = Album.count
     @users_count = User.confirmado.count

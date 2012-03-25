@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Banda < ActiveRecord::Base
   belongs_to :user
   has_many :albuns, :dependent => :destroy  

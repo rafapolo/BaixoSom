@@ -1,6 +1,8 @@
 BaixoSom::Application.routes.draw do
 
     root :to => "bandas#index"
+
+ match 'bandas/:letra' => "bandas#index", :constraints => {:id => /\w/}
     
     resources :links, :torrents, :votos, :users, :bandas, :albuns, :votos
 
@@ -10,7 +12,6 @@ BaixoSom::Application.routes.draw do
     match "pesquisa" => "pesquisa#pesquisa"
     match 'sitemap.xml' => "sitemap#sitemap", :defaults => {:format => :xml}
 
-    match 'bandas/:letra' => "bandas#index", :requirements => { :letra => /\w/ }
     match 'nova_banda' => "bandas#new"
     match 'pessoa/:user' => "users#show"
     match 'pessoa/update/:id' => "users#update_status"
