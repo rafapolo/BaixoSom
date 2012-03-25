@@ -1,0 +1,14 @@
+%h1 Listing trackers
+%table
+  %tr
+    %th Url
+    %th Nome
+  - @trackers.each do |tracker|
+    %tr
+      %td= h tracker.url
+      %td= h tracker.nome
+      %td= link_to 'Show', tracker
+      %td= link_to 'Edit', edit_tracker_path(tracker)
+      %td= link_to 'Destroy', tracker, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New tracker', new_tracker_path

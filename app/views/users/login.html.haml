@@ -1,0 +1,16 @@
+%h1 Autenticação
+= form_for :user, :url => { :action => "login" } do |f|
+  %p
+    = f.label :username
+    %br/
+    = f.text_field :username
+  %p
+    = f.label :senha
+    %br/
+    = f.password_field :senha
+  %p
+    = f.submit 'Entrar'
+%br/
+= link_to 'Voltar', "javascript:back()"
+|
+\#{link_to 'Novo Usuário', "novo_usuario"}

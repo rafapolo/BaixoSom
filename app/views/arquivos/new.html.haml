@@ -1,0 +1,22 @@
+%h1 New arquivo
+- form_for(@arquivo) do |f|
+  = f.error_messages
+  %p
+    = f.label :nome
+    %br/
+    = f.text_field :nome
+  %p
+    = f.label :pasta
+    %br/
+    = f.text_field :pasta
+  %p
+    = f.label :tamanho
+    %br/
+    = f.text_field :tamanho
+  %p
+    = f.label :torrent_id
+    %br/
+    = f.text_field :torrent_id
+  %p
+    = f.submit 'Create'
+= link_to 'Back', arquivos_path

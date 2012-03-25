@@ -1,0 +1,21 @@
+#fixo
+  %h1= h @banda.nome
+  - albuns = @banda.albuns.count
+  = link_to 'Adicionar Álbum', new_album_path(@banda)
+  %p{:style => "font-size:12px"}= pluralize(albuns, "álbum", "álbuns")
+
+- if @banda_albuns.size > 0
+  - x=0
+  %table{:cellspacing => "15px", :style => "margin-left:-15px"}    
+    %tr    
+      - @banda_albuns.each do |album|
+        %td{:align => "center", :valign => "top", :width => "180px"}
+          = link_to album_image(album), album_path(album)
+          %br
+          = link_to "#{album.nome} (#{album.ano})", album_path(album)
+          - x = x+1
+          - if x % 4 == 0
+            %tr/
+  %br
+- else
+  %p Nenhum álbum foi adicionado ainda.

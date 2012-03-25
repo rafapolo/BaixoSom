@@ -1,0 +1,17 @@
+#anexar_torrent{:style => "display:none"}
+  %br/
+  = image_tag "loading.gif", :id=>"loading_gif", :style=>"display: none; float:left; padding-right: 5px"
+  #upload_status{:style => "font-weight:bold;"}
+    Adicionar .torrent
+  = form_tag "/torrents/upload", :multipart => true do
+    %div
+      = file_field 'upload', 'torrent_file'
+      = hidden_field_tag  'album_id', @album.id
+      = submit_tag "Anexar", :id=>"anexar_torrent_btn",                                                                                                                                                                         |
+        :onclick=>"$('loading_gif').show(); $('upload_torrent_file').hide(); $('anexar_torrent_btn').hide(); $('upload_status').update('O .torrent está sendo processado.<br>Pode levar um minuto. Aguarde...'); return true;" |
+%br/
+:javascript
+  var addTorrent = function(){
+    $('#anexar_torrent').toggle("slow")
+  }
+  

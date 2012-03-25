@@ -1,0 +1,18 @@
+%h1 Listing arquivos
+%table
+  %tr
+    %th Nome
+    %th Pasta
+    %th Tamanho
+    %th Torrent
+  - @arquivos.each do |arquivo|
+    %tr
+      %td= h arquivo.nome
+      %td= h arquivo.pasta
+      %td= h arquivo.tamanho
+      %td= h arquivo.torrent_id
+      %td= link_to 'Show', arquivo
+      %td= link_to 'Edit', edit_arquivo_path(arquivo)
+      %td= link_to 'Destroy', arquivo, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New arquivo', new_arquivo_path

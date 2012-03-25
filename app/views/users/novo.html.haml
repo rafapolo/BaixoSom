@@ -1,0 +1,24 @@
+%h1 Novo usuário
+- form_for :user, :url => { :action => "create" } do |f|
+  = f.error_messages
+  %p
+    = f.label :username
+    (login)
+    %br/
+    = f.text_field :username
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p
+    = f.label :senha
+    %br/
+    = f.password_field :senha
+  %p
+    = f.label :info
+    (frase do perfil)
+    %br/
+    = f.text_field :info
+  %p
+    = f.submit 'Criar'
+= link_to 'Voltar', "javascript:back()"

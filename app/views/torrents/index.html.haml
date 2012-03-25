@@ -1,0 +1,7 @@
+%p
+  = @torrents.size
+  torrents
+- @torrents.each do |torrent|
+  %p
+    = link_to "#{torrent.nome}", torrent.link.url, { :rel => 'nofollow' }
+    = "#{torrent.total_seeds} seeds"

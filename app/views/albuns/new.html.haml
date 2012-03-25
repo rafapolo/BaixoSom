@@ -1,0 +1,16 @@
+:javascript
+  document.title = "BaixoGavea.com | Adicionar Álbum"
+%h1
+  Novo Álbum | #{@banda.nome}
+- form_for :album, :url => { :action => "create" } do |f|
+  = hidden_field_tag("album[banda_id]", @banda.id)
+  %p
+    = f.label :nome
+    %br/
+    = f.text_field :nome
+    \&nbsp;&nbsp;
+    \#{f.date_select :ano, :discard_day => true, :discard_month => true, :start_year => 1950, :end_year=>Time.now.year}
+  %p
+    = f.submit 'Criar'
+%br/
+= link_to 'Voltar', banda_path(@banda)

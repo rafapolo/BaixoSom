@@ -1,0 +1,14 @@
+%html{:lang => "pt-br", "xml:lang" => "pt-br", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title
+      BaixoSom | #{@page_title || "Navegue por Baixo"}
+    %link{:href => "/assets/favicon.png", :rel => "shortcut icon"}/
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "Sistema Colaborativo de Discografias", :name => "description"}/
+    = stylesheet_link_tag 'estilo'
+    = render :partial => "layouts/googleanalytics" if Rails.env.production?
+    = javascript_include_tag "jquery171"
+  %body
+    = render :partial => "layouts/topo"
+    = render :partial => "layouts/container"
+    = render :partial => "layouts/rodape"

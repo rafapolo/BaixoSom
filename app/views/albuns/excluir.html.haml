@@ -1,0 +1,11 @@
+:javascript
+  document.title = "BaixoGavea.com | Excluir | #{@album.nome}"
+%table
+  %tr
+    %td
+      %div{:style => "float: left; padding-right:15px"}= album_image(@album)
+    %td{:align => "center", :valign => "middle"}
+      %h2= "Tem certeza que deseja excluir<br>#{@album.banda.nome} - #{@album.nome} (#{@album.ano})<br>e todos seus liames e comentários?"
+      %br/
+      = link_to "Não", "javascript:back()"
+      | #{link_to "Sim",  destroy_album_path(@album)}

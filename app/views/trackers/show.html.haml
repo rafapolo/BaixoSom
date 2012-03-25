@@ -1,0 +1,9 @@
+%p
+  %b Url:
+  = h @tracker.url
+%p
+  %b Nome:
+  = h @tracker.nome
+= link_to 'Edit', edit_tracker_path(@tracker)
+|
+\#{link_to 'Back', trackers_path}

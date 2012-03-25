@@ -1,0 +1,22 @@
+%h1
+  Resultado da Procura | #{@pesquisa}
+- if @albuns.size == 0 &&  @bandas.size == 0
+  %p Nenhum resultado.
+  %br/
+%br/
+- if @bandas.size > 0
+  %h2
+    Bandas #{"(#{@bandas.count})"}
+  %ul
+    - @bandas.each do |banda|
+      %li
+        = link_to(hl(@pesquisa, banda.nome), banda_path(banda))
+- if @albuns.size > 0
+  %h2
+    Álbuns #{"(#{@albuns.count})"}
+  %ul
+    - @albuns.each do |album|
+      %li
+        = link_to(hl(@pesquisa, album_name(album)), album_path(album))
+  %br/
+= link_to "Voltar", "javascript:back()"

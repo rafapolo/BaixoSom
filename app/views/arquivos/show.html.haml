@@ -1,0 +1,15 @@
+%p
+  %b Nome:
+  = h @arquivo.nome
+%p
+  %b Pasta:
+  = h @arquivo.pasta
+%p
+  %b Tamanho:
+  = h @arquivo.tamanho
+%p
+  %b Torrent:
+  = h @arquivo.torrent_id
+= link_to 'Edit', edit_arquivo_path(@arquivo)
+|
+\#{link_to 'Back', arquivos_path}
